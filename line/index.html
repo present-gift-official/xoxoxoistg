@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://lin.ee/z0cMQLj">
-  <title>公式LINE</title>
-  <script>
-    window.location.href = "https://lin.ee/z0cMQLj";
-  </script>
+<meta charset="UTF-8">
+<title>LINE起動中</title>
 </head>
-<body>
-  <p>リダイレクト中です... <a href="https://lin.ee/z0cMQLj“>こちらをクリック</a></p>
+<body style="background:#fff;">
+<script>
+    var id = "@257pbiqz";
+    var ua = navigator.userAgent.toLowerCase();
+
+    // Android用の強制アプリ起動（Intent）
+    var android = "intent://ti/p/" + id + "#Intent;scheme=line;package=jp.naver.line.android;end";
+    
+    // iOS用の「TikTok強制脱出＆LINE起動」コマンド（これが最重要です）
+    var ios = "https://line.me/R/ti/p/" + id + "?openExternalBrowser=1";
+
+    // 画面を開いた瞬間に、履歴を残さずに一気にジャンプさせる
+    if (ua.indexOf("android") > -1) {
+        window.location.replace(android);
+    } else {
+        window.location.replace(ios);
+    }
+</script>
 </body>
 </html>
