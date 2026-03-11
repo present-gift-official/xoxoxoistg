@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>LINE起動中</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINEへ進む</title>
+    <style>
+        body { font-family: sans-serif; background: #f8f9fa; color: #333; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; }
+        .container { text-align: center; width: 90%; max-width: 400px; background: #fff; padding: 40px 20px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .icon { font-size: 60px; margin-bottom: 20px; }
+        .msg { font-size: 18px; font-weight: bold; line-height: 1.6; margin-bottom: 30px; }
+        .escape-btn { display: block; background: #007bff; color: #fff; text-decoration: none; font-weight: bold; padding: 20px; border-radius: 16px; font-size: 18px; box-shadow: 0 4px 15px rgba(0,123,255,0.3); cursor: pointer; border: none; width: 100%; }
+        #guide { display: none; margin-top: 30px; border-top: 1px dashed #ccc; padding-top: 20px; }
+        .arrow { font-size: 40px; color: #ff4d4d; animation: bounce 1s infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    </style>
 </head>
-<body style="background:#fff;">
+<body>
+
+<div class="container">
+    <div class="icon">🔓</div>
+    <div class="msg">安全にLINEを開くために<br>下のボタンをタップしてください</div>
+
+    <button id="btn" class="escape-btn">ブラウザで開いてLINEへ</button>
+
+    <div id="guide">
+        <div class="arrow">↗</div>
+        <p style="font-weight:bold; color:#ff4d4d; font-size:16px;">
+            移動しない場合は、右上の「...」から<br>
+            「ブラウザで開く」を選択してください
+        </p>
+    </div>
+</div>
+
 <script>
-    var id = "@257pbiqz";
+    var id = "@257pbiqz"; 
+    var btn = document.getElementById('btn');
+    var guide = document.getElementById('guide');
     var ua = navigator.userAgent.toLowerCase();
 
-    // Android用の強制アプリ起動（Intent）
-    var android = "intent://ti/p/" + id + "#Intent;scheme=line;package=jp.naver.line.android;end";
-    
-    // iOS用の「TikTok強制脱出＆LINE起動」コマンド（これが最重要です）
-    var ios = "https://line.me/R/ti/p/" + id + "?openExternalBrowser=1";
+    btn.onclick = function() {
+        // ボタンを押した瞬間に、案内を表示（保険）
+        guide.style.display = 'block';
 
-    // 画面を開いた瞬間に、履歴を残さずに一気にジャンプさせる
-    if (ua.indexOf("android") > -1) {
-        window.location.replace(android);
-    } else {
-        window.location.replace(ios);
-    }
+        if (ua.indexOf("android") > -1) {
+            // Android: 直接アプリ起動またはChrome起動を狙う
+            window.location.href = "intent://ti/p/" + id + "#Intent;scheme=line;package=jp.naver.line.android;end";
+        } else {
+            // iOS: 外部ブラウザ強制脱出パラメーター付き
+            window.location.href = "https://line.me/R/ti/p/" + id + "?openExternalBrowser=1";
+        }
+    };
 </script>
 </body>
 </html>
