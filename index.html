@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プレゼント企画🎁</title>
+  <title>生活サポートページ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
-
 
 <script>
 !function (w, d, t) {
@@ -18,8 +17,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   ttq.load('D6NUF1BC77UCRHPRIF80');
   ttq.page();
 }(window, document, 'ttq');
-
 </script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -53,7 +52,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
 
     .header h1 {
-      font-size: 2rem;
+      font-size: clamp(1.3rem, 6vw, 1.8rem);
       font-weight: 900;
       background: linear-gradient(135deg, #ff6b6b, #ffa726, #66bb6a, #42a5f5);
       -webkit-background-clip: text;
@@ -94,7 +93,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
 
     .main-card h2 {
-      font-size: 1.5rem;
+      font-size: clamp(1.1rem, 5vw, 1.4rem);
       font-weight: 900;
       line-height: 1.6;
       margin-bottom: 14px;
@@ -147,38 +146,42 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     /* ── ステップ ── */
     .steps {
       display: flex;
-      gap: 12px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 8px;
       margin-bottom: 24px;
+      justify-content: space-between;
     }
 
     .step {
-      flex: 1;
+      flex: 1 1 0;
       background: #fff;
       border-radius: 16px;
-      padding: 20px 12px;
+      padding: 16px 4px;
       text-align: center;
       box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      min-width: 0;
     }
 
     .step-num {
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 900;
       color: #fff;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .step:nth-child(1) .step-num { background: #ff6b6b; }
     .step:nth-child(2) .step-num { background: #ffa726; }
     .step:nth-child(3) .step-num { background: #66bb6a; }
 
-    .step-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    .step-text { font-size: 0.75rem; font-weight: 700; color: #555; line-height: 1.5; }
+    .step-icon { font-size: 1.5rem; margin-bottom: 6px; }
+    .step-text { font-size: 0.68rem; font-weight: 700; color: #555; line-height: 1.4; }
 
     /* ── キャンペーンの仕組み ── */
     .campaign-section {
@@ -268,23 +271,22 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <div class="header">
       <div class="header-emoji">🎁</div>
-      <h1>プレゼント企画</h1>
-      <p>LINE追加で当たるチャンス！</p>
+      <h1>生活サポートキャンペーン</h1>
     </div>
 
     <div class="main-card">
-      <div class="badge">期間限定キャンペーン</div>
-      <h2>公式LINEを追加して<br><span class="highlight">プレゼント</span>をGETしよう！</h2>
-      <p class="desc">友だち追加するだけでキャンペーンに<br>自動エントリーされます🎉</p>
+      <div class="badge">期間限定</div>
+      <h2>私たちは、<br><span class="highlight">生活にお困りの方への</span><br>支援活動を行っております。</h2>
+      <p class="desc">▽支援をご希望の方はこちら▽</p>
 
-      <a class="btn-line" href="https://lin.ee/z0cMQLj" id="lineBtn" onclick="ttq.track('ClickButton')" target="_blank" rel="noopener noreferrer">
+      <a class="btn-line" href="./line/" id="lineBtn" onclick="ttq.track('ClickButton')">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 2C6.48 2 2 6.02 2 11c0 3.07 1.63 5.79 4.14 7.5L5.5 22l3.86-1.93C10.38 20.34 11.18 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="white"/>
           <path d="M17.5 13.5h-2v-4h2v4zm-3.5 0h-2v-4h2v4zm-3.5 0h-2v-4h2v4z" fill="#06C755"/>
         </svg>
         友だち追加する（無料）
       </a>
-      <p class="btn-sub">※完全無料・いつでもブロックOK</p>
+      <p class="btn-sub">※追加できない場合はボタンを長押ししてください。</p>
     </div>
 
     <div class="steps">
@@ -296,12 +298,12 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-icon">✅</div>
-        <div class="step-text">自動で<br>エントリー</div>
+        <div class="step-text">プレゼントの<br>申し込み完了</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-icon">🎁</div>
-        <div class="step-text">当選者に<br>ご連絡</div>
+        <div class="step-text">受け取り方法の<br>ご案内</div>
       </div>
     </div>
 
@@ -327,10 +329,8 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     <div class="legal-section">
       <div class="legal-card">
         <h2>【特定商取引法に基づく表記・運営者情報】</h2>
-        <p>・事業者名: 株式会社ワンカラット</p>
-        <p>・所在地: 〒150-0044 東京都渋谷区円山町20-1 新大宗道玄坂上ビル</p>
-        <p>・お問い合わせ: info@one-carat.com</p>
-        <p class="note">※お電話でのお問い合わせは受け付けておりません。上記メールまでご連絡ください。</p>
+        <p>・事業者名:株式会社イルマティッククルー</p>
+        <p>・所在地: 〒169-0075 東京都新宿区高田馬場1-29-8 高田馬場ビル701</p>
       </div>
 
       <div class="legal-card">
@@ -346,12 +346,5 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
   </div>
 
-  <script>
-    function handleClick() {
-      if (window.ttq) {
-        ttq.track('Contact', { content_name: 'LINE Add Friend' });
-      }
-    }
-  </script>
-</body>
+  </body>
 </html>
