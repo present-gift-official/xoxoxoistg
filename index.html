@@ -68,7 +68,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <body>
   <div class="page">
     <div class="header">
-      <div class="header-emoji">🎁</div>
+      <div class="header-emoji">💝</div>
       <h1>生活サポートキャンペーン</h1>
     </div>
 
@@ -77,7 +77,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       <h2>私たちは、<br><span class="highlight">生活にお困りの方への</span><br>支援活動を行っております。</h2>
       <p class="desc">▽支援をご希望の方はこちら▽</p>
 
-      <a class="btn-line" href="javascript:void(0);" onclick="openLineApp();">
+      <a class="btn-line" href="line/index.html" onclick="ttq.track('ClickButton');">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M12 2C6.48 2 2 6.02 2 11c0 3.07 1.63 5.79 4.14 7.5L5.5 22l3.86-1.93C10.38 20.34 11.18 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="white"/>
           <path d="M17.5 13.5h-2v-4h2v4zm-3.5 0h-2v-4h2v4zm-3.5 0h-2v-4h2v4z" fill="#06C755"/>
@@ -107,29 +107,5 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     <div class="footer">&copy; 2026 プレゼント企画事務局. All rights reserved.</div>
   </div>
-
-  <script>
-    function openLineApp() {
-      // 1. ピクセル送信（エラーが起きても止まらないように安全装置を追加）
-      try {
-        if (window.ttq) {
-          ttq.track('ClickButton');
-        }
-      } catch(e) {}
-
-      // 2. LINEの強制起動コードを準備
-      var id = "@257pbiqz";
-      var ua = navigator.userAgent.toLowerCase();
-      var iosUrl = "line://ti/p/" + id;
-      var androidIntent = "intent://ti/p/" + id + "#Intent;scheme=line;package=jp.naver.line.android;end";
-
-      // 3. 【重要】遅延(setTimeout)を完全に削除し、タップと同時に移動させる
-      if (ua.indexOf("android") > -1) {
-        window.location.href = androidIntent;
-      } else {
-        window.location.href = iosUrl;
-      }
-    }
-  </script>
 </body>
 </html>
