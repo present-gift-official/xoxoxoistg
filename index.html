@@ -1,77 +1,202 @@
+HP風ギットハブ
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>生活サポートページ</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>npo法人◯◯ | 生活困窮者自立支援全国ネットワーク</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 基本設定 */
+        body {
+            margin: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
 
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-  ttq.load('D6NUF1BC77UCRHPRIF80');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
+        /* ヘッダー */
+        header {
+            padding: 20px;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Noto Sans JP', sans-serif; background: linear-gradient(135deg, #fff1eb 0%, #fce4ec 30%, #e8f5e9 60%, #e3f2fd 100%); min-height: 100vh; color: #333; }
-    .page { max-width: 480px; margin: 0 auto; padding: 40px 20px 60px; }
-    .header { text-align: center; margin-bottom: 32px; }
-    .header-emoji { font-size: 4rem; margin-bottom: 12px; }
-    .header h1 { font-size: clamp(1.3rem, 6vw, 1.8rem); font-weight: 900; background: linear-gradient(135deg, #ff6b6b, #ffa726, #66bb6a, #42a5f5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
-    .main-card { background: #ffffff; border-radius: 24px; padding: 36px 24px; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.08); margin-bottom: 24px; position: relative; overflow: hidden; }
-    .main-card .badge { display: inline-block; background: linear-gradient(135deg, #ff6b6b, #ff8a65); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 5px 16px; border-radius: 100px; margin-bottom: 20px; letter-spacing: 0.1em; }
-    .main-card h2 { font-size: clamp(1.1rem, 5vw, 1.4rem); font-weight: 900; line-height: 1.6; margin-bottom: 14px; color: #333; }
-    .main-card h2 .highlight { color: #ff6b6b; }
-    .main-card .desc { font-size: 0.88rem; color: #777; line-height: 1.8; margin-bottom: 28px; }
-    .btn-line { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 18px 24px; background: linear-gradient(135deg, #06C755, #00b848); color: #fff; font-size: 1.1rem; font-weight: 900; border: none; border-radius: 16px; cursor: pointer; text-decoration: none; box-shadow: 0 6px 24px rgba(6,199,85,0.4); transition: all 0.2s ease; }
-    .btn-sub { font-size: 0.75rem; color: #999; margin-top: 12px; }
-    .steps { display: flex; flex-direction: row; gap: 8px; margin-bottom: 24px; justify-content: space-between; }
-    .step { flex: 1; background: #fff; border-radius: 16px; padding: 16px 4px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
-    .step-num { width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
-    .step:nth-child(1) .step-num { background: #ff6b6b; }
-    .step:nth-child(2) .step-num { background: #ffa726; }
-    .step:nth-child(3) .step-num { background: #66bb6a; }
-    .step-icon { font-size: 1.5rem; margin-bottom: 6px; }
-    .step-text { font-size: 0.68rem; font-weight: 700; color: #555; }
-    .footer { text-align: center; margin-top: 40px; font-size: 0.68rem; color: #bbb; }
-  </style>
+        /* メインビジュアル */
+        .hero {
+            width: 100%;
+            height: 300px;
+            background-color: #e1f5fe; /* 水色の背景 */
+            background-image: url('hero-image.png'); /* ここにイラスト画像をアップロード */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-text {
+            color: #4db6ac;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 1px 1px 2px white;
+        }
+
+        /* ボタンセクション */
+        .action-buttons {
+            padding: 30px 20px;
+            background-color: #fdfaf5;
+            text-align: center;
+        }
+        .btn {
+            display: block;
+            max-width: 300px;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            transition: opacity 0.3s;
+        }
+        .btn-line { background-color: #ff8a80; } /* 相談窓口（ピンク） */
+        .btn-support { background-color: #66bb6a; } /* 支援内容（グリーン） */
+        .btn:hover { opacity: 0.8; }
+
+        /* 紹介テキストセクション */
+        .about-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-section h2 {
+            color: #66bb6a;
+            border-bottom: 2px solid #66bb6a;
+            padding-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        /* 事業内容リンク（テキストのみ） */
+        .nav-links {
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .nav-links li {
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-links a {
+            display: block;
+            padding: 15px;
+            color: #333;
+            text-decoration: none;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '→';
+            position: absolute;
+            right: 15px;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #81d4fa;
+            background-image: url('footer-bg.png'); /* 水色のイラスト背景用 */
+            background-size: cover;
+            padding: 40px 20px;
+            color: #333;
+        }
+        .footer-info { margin-bottom: 30px; }
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        .footer-links a {
+            color: #333;
+            text-decoration: none;
+        }
+        .copyright {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="page">
-    <div class="header">
-      <div class="header-emoji">💝</div>
-      <h1>生活サポートキャンペーン</h1>
+
+<header>
+    <div class="logo">npo法人◯◯</div>
+    </header>
+
+<div class="hero">
+    <div class="hero-text">
+        生活困窮者<br>自立支援全国ネットワーク
+    </div>
+</div>
+
+<section class="action-buttons">
+    <p style="font-size: 0.9rem; margin-bottom: 15px;">今の生活に不安を抱えて相談を希望される方へ</p>
+    <a href="https://line.me/R/ti/p/your-id" class="btn btn-line">相談窓口はこちら（LINE）</a>
+    <a href="support.html" class="btn btn-support">支援内容はこちら</a>
+</section>
+
+<section class="about-section">
+    <h2>生活困窮者自立支援全国ネットワークについて</h2>
+    <p>
+        経済的困窮や社会的孤立など、生活困窮状況に置かれた人々が抱える課題は多様・多重化しています。平成27（2015）年度の「生活困窮者自立支援法」の本格実施に向けて、すでに地域において生活困窮者支援に携わってきた人々、当事者、学識経験者などがネットワークを結び、共に学び支え合い、連携して政策の推進を図っていくことを目的に、2014年11月8日に「生活困窮者自立支援全国ネットワーク」を設立しました。
+    </p>
+    <p>
+        毎年「全国研究交流大会」を開催し、最新情報とともに参加者・講師の出会いと学びをお届けします。ぜひ、あなたも仲間に加わりませんか？
+    </p>
+</section>
+
+<nav class="nav-links">
+    <ul>
+        <li><a href="business.html">事業内容</a></li>
+        <li><a href="subsidy.html">助成事業</a></li>
+        <li><a href="social-activity.html">社会活動</a></li>
+        <li><a href="organization.html">組織概要</a></li>
+    </ul>
+</nav>
+
+<footer>
+    <div class="footer-info">
+        <strong>一般社団法人<br>生活困窮者自立支援全国ネットワーク</strong><br>
+        <p style="font-size: 0.9rem;">
+            〒169-0072 東京都新宿区大久保2-4-15 サンライズ新宿 3階
+        </p>
     </div>
 
-    <div class="main-card">
-      <div class="badge">期間限定</div>
-      <h2>私たちは、<br><span class="highlight">生活にお困りの方への</span><br>支援活動を行っております。</h2>
-      <p class="desc">▽支援をご希望の方はこちら▽</p>
-
-      <a class="btn-line" href="line/index.html" onclick="ttq.track('ClickButton');">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2C6.48 2 2 6.02 2 11c0 3.07 1.63 5.79 4.14 7.5L5.5 22l3.86-1.93C10.38 20.34 11.18 20.5 12 20.5c5.52 0 10-4.02 10-9S17.52 2 12 2z" fill="white"/>
-          <path d="M17.5 13.5h-2v-4h2v4zm-3.5 0h-2v-4h2v4zm-3.5 0h-2v-4h2v4z" fill="#06C755"/>
-        </svg>
-        友だち追加する（無料）
-      </a>
-      <p class="btn-sub">※追加できない場合はボタンを長押ししてください。</p>
+    <div class="footer-links">
+        <a href="#">リンク</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">特定商取引法に基づく表記</a>
+        <a href="#">お問い合わせ</a>
     </div>
 
-    <div class="steps">
-      <div class="step"><div class="step-num">1</div><div class="step-icon">📱</div><div class="step-text">LINEを<br>追加</div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-icon">✅</div><div class="step-text">申し込み<br>完了</div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-icon">🎁</div><div class="step-text">受け取り方法<br>ご案内</div></div>
+    <div class="copyright">
+        Copyright © 2026 npo法人◯◯ All Rights Reserved.
     </div>
+</footer>
 
-    <div class="footer">&copy; 2026 プレゼント企画事務局. All rights reserved.</div>
-  </div>
 </body>
 </html>
+	
+	
