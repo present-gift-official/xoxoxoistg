@@ -32,30 +32,37 @@
         /* メインビジュアル */
         .hero {
             width: 100%;
-            height: 300px;
-            background-color: #e1f5fe; /* 水色の背景 */
-            background-image: url('hero-image.png'); /* ここにイラスト画像をアップロード */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-text {
-            color: #4db6ac;
-            font-size: 1.5rem;
-            font-weight: bold;
             text-align: center;
-            text-shadow: 1px 1px 2px white;
+            background-color: #e1f5fe;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            display: block;
         }
 
         /* ボタンセクション */
         .action-buttons {
             padding: 30px 20px;
-            background-color: #fdfaf5;
+            background-color: #ffffff; /* ① 背景を真っ白に変更 */
             text-align: center;
         }
+
+        /* ① 枠組みデザインの変更 */
+        .highlight-box {
+            border: 2px solid #ff8a80; /* ② 枠をピンク色に変更 */
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #000;
+            background-color: #fff;
+            margin: 0 auto 20px auto;
+            display: inline-block;
+            font-size: 0.95rem;
+        }
+
         .btn {
             display: block;
             max-width: 300px;
@@ -67,9 +74,48 @@
             color: #fff;
             transition: opacity 0.3s;
         }
-        .btn-line { background-color: #ff8a80; } /* 相談窓口（ピンク） */
-        .btn-support { background-color: #66bb6a; } /* 支援内容（グリーン） */
+        .btn-line { background-color: #66bb6a; }
+        .btn-support { 
+            background-color: #ff8a80; 
+            margin-top: 40px; 
+        }
         .btn:hover { opacity: 0.8; }
+
+        /* ② 追加画像のスタイル */
+        .step0-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            display: block;
+            margin: 15px auto 25px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* ③・④ ブラウザで開く手順画像の横並び設定と番号表記 */
+        .browser-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px auto 10px auto; 
+            max-width: 100%;
+        }
+        .browser-image-wrapper {
+            width: 48%;
+            max-width: 200px;
+            text-align: center;
+        }
+        .image-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .browser-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
         /* 紹介テキストセクション */
         .about-section {
@@ -84,7 +130,7 @@
             font-size: 1.4rem;
         }
 
-        /* 事業内容リンク（テキストのみ） */
+        /* 事業内容リンク */
         .nav-links {
             padding: 20px;
             background: #f9f9f9;
@@ -113,93 +159,112 @@
 
         /* フッター */
         footer {
-            background-color: #81d4fa;
-            background-image: url('footer-bg.png'); /* 水色のイラスト背景用 */
+            background-color: #e1f5fe;
+            background-image: url('footer-bg.png');
             background-size: cover;
             padding: 40px 20px;
             color: #333;
         }
         .footer-info { margin-bottom: 30px; }
+        
+        /* ⑦・⑧ フッターリンクを企業サイト風に（全て左寄せで縦並び） */
         .footer-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 0.95rem;
+            text-align: left;
         }
         .footer-links a {
             color: #333;
             text-decoration: none;
         }
+        
+        /* ⑨ コピーライトのデザイン */
         .copyright {
-            margin-top: 30px;
+            margin-top: 40px;
             text-align: center;
             font-size: 0.8rem;
+            line-height: 1.8;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">ロゴ置く？</div>
-    </header>
-
 <div class="hero">
-    <div class="hero-text">
-        NPO法人<br>ハートフルサポート
-    </div>
+    <img src="banner.jpg" alt="NPO法人ハートフルサポート">
 </div>
 
 <section class="action-buttons">
-    <p style="font-size: 0.9rem; margin-bottom: 15px;">生活にお困りの方へプレゼントをお届けしています</p>
-	<P>🔻受け取りのお申し込みは LINEから</P>
-    <a href="https://line.me/R/ti/p/your-id" class="btn btn-line">長押しで友だち追加</a>
-	<P>👆ボタンを長押し➡️リンクを開く<br>お困り事のご相談のみでも大丈夫です。お気軽にご連絡ください。</P>
+    <div class="highlight-box">
+        生活にお困りの方へ<br>プレゼントをお届けしています
+    </div>
+
+    <p>▽受け取りのお申し込みは LINEから▽</p>
+    <a href="https://lin.ee/v4NQ4SG" class="btn btn-line">長押しで友だち追加</a>
+    
+    <p><b>ボタンを長押し→リンクを開く</b></p>
+    
+    <img src="step0.JPEG" alt="step0.JPEG" class="step0-image">
+
+    <p style="font-weight: bold; margin-top: 30px;">またはブラウザで開く</p>
+    
+    <div class="browser-images">
+        <div class="browser-image-wrapper">
+            <div class="image-label">①</div>
+            <img src="step1.JPEG" alt="①">
+        </div>
+        <div class="browser-image-wrapper">
+            <div class="image-label">②</div>
+            <img src="step2.JPEG" alt="②">
+        </div>
+    </div>
+
     <a href="https://present-gift-official.github.io/line/" class="btn btn-support">配布実績はこちら</a>
 </section>
 
 <section class="about-section">
     <h2>活動内容について</h2>
     <p>
-		経済的困窮や社会的孤立など、生活困窮状況に置かれた人々を支援するため当法人を設立しました。
-		物価高や光熱費の高騰により生活にお困りの方、借金やカードの支払いに逼迫されている方、将来がご不安な方等を対象にプレゼントとして支援金を寄付しております。
+        経済的困窮や社会的孤立など、生活困窮状況に置かれた人々を支援するため当法人を設立しました。
+        物価高や光熱費の高騰により生活にお困りの方、借金やカードの支払いに逼迫されている方、将来がご不安な方等を対象にプレゼントとして支援金を寄付しております。
     </p>
     <p>
         支援金には本活動で使用されるプラットフォームやメディアでの広告収入の一部を、配布するギフトの資金として活用しております。
-		また、多くの企業が当法人の趣旨に賛同してくださり、協賛金をいただいております。
-		メディアや提携企業の協力により多くの方にプレゼントをお届けすることが可能となりました。
-		この場を借りてお礼申し上げます。
+        また、多くの企業が当法人の趣旨に賛同してくださり、協賛金をいただいております。
+        メディアや提携企業の協力により多くの方にプレゼントをお届けすることが可能となりました。
+        この場を借りてお礼申し上げます。
     </p>
 </section>
+
 <nav class="nav-links">
     <ul>
-        <li><a href="business.html">事業内容</a></li>
-        <li><a href="subsidy.html">助成事業</a></li>
-        <li><a href="social-activity.html">社会活動</a></li>
-        <li><a href="organization.html">組織概要</a></li>
+        <li><a href="#">事業内容</a></li>
+        <li><a href="#">助成事業</a></li>
+        <li><a href="#">社会活動</a></li>
+        <li><a href="#">組織概要</a></li>
     </ul>
 </nav>
 
 <footer>
     <div class="footer-info">
-        <strong>一NPO法人<br>ハートフルサポート</strong><br>
-        <p style="font-size: 0.9rem;">
-            〒169-0075 東京都新宿区高田馬場1-29-8　高田馬場ビル701
+        <strong>NPO法人<br>ハートフルサポート</strong><br>
+        <p style="font-size: 0.9rem; margin-top: 10px;">
+            〒169-0075 東京都新宿区高田馬場1-29-8<br>高田馬場ビル701
         </p>
     </div>
 
     <div class="footer-links">
-        <a href="#">リンク</a>
         <a href="#">プライバシーポリシー</a>
         <a href="#">特定商取引法に基づく表記</a>
-        <a href="#">お問い合わせ</a>
+        <a href="https://lin.ee/XCxfFa6">お問い合わせ</a>
     </div>
 
     <div class="copyright">
-        Copyright © 2026 npo法人ハートフルサポート All Rights Reserved.
+        Copyright &copy; 2026 npo法人ハートフルサポート<br>All Rights Reserved.
     </div>
 </footer>
 
 </body>
 </html>
-	
-	
